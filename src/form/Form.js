@@ -1,6 +1,4 @@
 import React, { PureComponent } from 'react';
-// import infoOutlinedIcon from './mdi_information-outline.png';
-import Icon from '@material-ui/core/Icon';
 import formatter from '../utils/formatter';
 import '../common/fonts.css';
 import './form.css';
@@ -13,7 +11,7 @@ export default class Form extends PureComponent {
       country: initialCountry || 'Australia',
       incomeYear: initialIncomeYear || '2020-2021',
       amount: initialAmount || null,
-      invisible: false
+      incompleteForm: false
     };
   }
 
@@ -24,7 +22,7 @@ export default class Form extends PureComponent {
   };
 
   render() {
-    const { country, incomeYear, amount, invisible } = this.state;
+    const { country, incomeYear, amount, incompleteForm } = this.state;
     const { result, onSubmit, onReturn } = this.props;
     return (
       <div
@@ -35,17 +33,29 @@ export default class Form extends PureComponent {
         <h2>{result ? 'Your tax results' : 'Calculate your tax'}</h2>
         {!result && (
           <div className="warning-box">
-            {/* <img src={infoOutlinedIcon} /> */}
-            <Icon>star</Icon>
+            <img
+              src="https://raw.githubusercontent.com/katherinesutarlim/visualcortex-exercise/master/public/icons/mdi_information-outline.png"
+              class="icon"
+            />
             <p>Fields marked with * are mandatory</p>
           </div>
+        )}
+        {incompleteForm && (
+          <p className="incomplete-message">
+            One or more fields have not been filled. Please complete all the
+            mandatory fields.
+          </p>
         )}
         <form
           onSubmit={event => {
             event.preventDefault();
-            this.setState({ invisible: true }, () =>
-              onSubmit(country, incomeYear, amount)
-            );
+            if (!(country && incomeYear && amount)) {
+              this.setState({ incompleteForm: true });
+            } else {
+              this.setState({ incompleteForm: false }, () =>
+                onSubmit(country, incomeYear, amount)
+              );
+            }
           }}
         >
           <div className="row">

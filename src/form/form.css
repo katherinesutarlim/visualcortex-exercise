@@ -60,6 +60,7 @@
   flex-direction: row;
   align-items: center;
   margin-top: 16px;
+  padding-left: 9.71px;
 }
 
 .warning-box p {
@@ -69,6 +70,20 @@
   font-size: 12px;
   line-height: 14px;
   color: #8477c9;
+}
+
+.warning-box .icon {
+  margin-right: 9.71px;
+}
+
+.incomplete-message {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: #e64626;
+  margin: 16px 0 0 0;
 }
 
 form {
@@ -147,6 +162,10 @@ select[disabled] {
   background-color: #e4e4e4;
   border: 0;
   color: #848484;
+}
+
+.amount-input input[type='text']:focus-visible {
+  outline: 0;
 }
 
 .amount-input input[type='text'][disabled] {
