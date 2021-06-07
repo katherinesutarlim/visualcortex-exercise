@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 // import infoOutlinedIcon from './mdi_information-outline.png';
-// import Icon from '@material-ui/core/Icon';
+import Icon from '@material-ui/core/Icon';
 import formatter from '../utils/formatter';
 import '../common/fonts.css';
 import './form.css';
@@ -36,7 +36,7 @@ export default class Form extends PureComponent {
         {!result && (
           <div className="warning-box">
             {/* <img src={infoOutlinedIcon} /> */}
-            {/* <Icon>star</Icon> */}
+            <Icon>star</Icon>
             <p>Fields marked with * are mandatory</p>
           </div>
         )}
