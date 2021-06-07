@@ -16,7 +16,7 @@ export default class Form extends PureComponent {
       <div class="half-screen" id="form">
         <h2>Calculate your tax</h2>
         <div class="warning-box">
-          <img src={'/icons/information-outline.png'} />
+          <img src={'/icons/mdi_information-outline.png'} />
           <p>Fields marked with * are mandatory</p>
         </div>
         <form
