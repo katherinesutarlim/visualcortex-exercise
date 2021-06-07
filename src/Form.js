@@ -12,7 +12,8 @@ export default class Form extends PureComponent {
     this.state = {
       country: initialCountry || 'Australia',
       incomeYear: initialIncomeYear || '2020-2021',
-      amount: initialAmount || null
+      amount: initialAmount || null,
+      invisible: false
     };
   }
 
@@ -23,10 +24,14 @@ export default class Form extends PureComponent {
   };
 
   render() {
-    const { country, incomeYear, amount } = this.state;
+    const { country, incomeYear, amount, invisible } = this.state;
     const { result, onSubmit, onReturn } = this.props;
     return (
-      <div className="half-screen" id="form">
+      <div
+        className="half-screen"
+        id="form"
+        className={result ? 'left' : 'right'}
+      >
         <h2>Calculate your tax</h2>
         <div className="warning-box">
           {/* <img src={infoOutlinedIcon} /> */}
@@ -36,7 +41,9 @@ export default class Form extends PureComponent {
         <form
           onSubmit={event => {
             event.preventDefault();
-            onSubmit(country, incomeYear, amount);
+            this.setState({ invisible: true }, () =>
+              onSubmit(country, incomeYear, amount)
+            );
           }}
         >
           <div className="row">
