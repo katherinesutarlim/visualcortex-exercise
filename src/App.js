@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import Form from './Form';
-import Results from './Results';
-import calculate from './calculate';
+import Form from './form/Form';
+import Results from './results/Results';
+import calculate from './utils/calculate';
+import './common/fonts.css';
 import './style.css';
 
 export default class App extends PureComponent {
@@ -30,9 +31,6 @@ export default class App extends PureComponent {
       inputIncomeYear,
       inputAmount
     } = this.state;
-    // if (showResult && calculationResult) {
-
-    // }
     const resultAvailable = showResult && calculationResult;
     return (
       <div className="container">
@@ -59,30 +57,5 @@ export default class App extends PureComponent {
         {resultAvailable ? <Results data={calculationResult} /> : null}
       </div>
     );
-    // return (
-    //   <div className="container">
-    //     <div id="background" className="left">
-    //       <div id="big-circle" />
-    //       <div id="small-circle" />
-    //     </div>
-    //     <div id="left-title" className="half-screen">
-    //       <div className="text-container">
-    //         <h1>Tax-o-tron</h1>
-    //         <h5>The free and simple online tax calculator.</h5>
-    //       </div>
-    //     </div>
-    //     <Form
-    //       onSubmit={(country, incomeYear, amount) => {
-    //         setTimeout(() => this.setState({
-    //           showResult: true,
-    //           calculationResult: calculate(country, incomeYear, amount),
-    //           inputCountry: country,
-    //           inputIncomeYear: incomeYear,
-    //           inputAmount: amount
-    //         }), 500);
-    //       }}
-    //     />
-    //   </div>
-    // );
   }
 }

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import formatter from './formatter';
-import './style.css';
+import formatter from './utils/formatter';
+import '../common/fonts.css';
 import './results.css';
 
 export default class Results extends PureComponent {
