@@ -15,6 +15,14 @@ export default class Form extends PureComponent {
     };
   }
 
+  onCountryChange = event => {
+    this.setState({ country: event.target.value });
+  };
+
+  onIncomeYearChange = event => {
+    this.setState({ incomeYear: event.target.value });
+  };
+
   onAmountChange = event => {
     this.setState({
       amount: parseInt(event.target.value.replace(/,/g, ''), 10)
@@ -62,7 +70,7 @@ export default class Form extends PureComponent {
             <label>Select your country of residence *</label>
             <select
               value={this.state.value}
-              onChange={this.handleChange}
+              onChange={this.onCountryChange}
               disabled={result}
             >
               <option value="Australia">Australia</option>
@@ -75,10 +83,10 @@ export default class Form extends PureComponent {
             <label>Select an income year *</label>
             <select
               value={this.state.value}
-              onChange={this.handleChange}
+              onChange={this.onIncomeYearChange}
               disabled={result}
             >
-              <option value="2021-2020">2021-2020</option>
+              <option value="2020-2021">2020-2021</option>
               <option value="2019-2020">2019-2020</option>
               <option value="2018-2019">2018-2019</option>
               <option value="2017-2018">2017-2018</option>

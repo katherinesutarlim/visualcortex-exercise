@@ -15,11 +15,10 @@ export default class Results extends PureComponent {
   render() {
     const { data } = this.props;
     const totalAmount = data
-      ? data.reduce((total, item) => {
-          console.log(total);
-          console.log(item);
-          return parseInt(total, 10) + (item.amount || 0);
-        }, 0)
+      ? data.reduce(
+          (total, item) => parseInt(total, 10) + (item.amount || 0),
+          0
+        )
       : 0;
     const { visible } = this.state;
     return (

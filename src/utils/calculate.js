@@ -47,9 +47,10 @@ const calculate = (country, incomeYear, amount) => {
       };
     });
   }
-  return taxBracket['Australia']['2020-2021'].map(bracket => {
-    return { ...bracket, amount: 0 };
-  });
+  return taxBracket['Australia']['2020-2021'].map(bracket => ({
+    ...bracket,
+    amount: 0
+  }));
 };
 
 export default calculate;
