@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import infoOutlinedIcon from '../assets/icons/information-outline.png';
 import './style.css';
 import './form.css';
 
@@ -16,7 +16,7 @@ export default class Form extends PureComponent {
       <div class="half-screen" id="form">
         <h2>Calculate your tax</h2>
         <div class="warning-box">
-          {/* <InfoOutlinedIcon /> */}
+          <img src={'/icons/information-outline.png'} />
           <p>Fields marked with * are mandatory</p>
         </div>
         <form
@@ -44,15 +44,19 @@ export default class Form extends PureComponent {
           </div>
           <div class="row">
             <label>Enter your total taxable income for the income year *</label>
-            <input
-              type="text"
-              value={amount || ''}
-              onChange={event => {
-                this.setState({ amount: parseFloat(event.target.value) });
-                console.log('change', event.target.value);
-              }}
-              placeholder="Amount"
-            />
+            <div class="amount-input">
+              <div class="prefix">$</div>
+              <input
+                type="text"
+                value={amount || ''}
+                onChange={event => {
+                  this.setState({ amount: parseFloat(event.target.value) });
+                  console.log('change', event.target.value);
+                }}
+                placeholder="Amount"
+              />
+              <div class="prefix">.00</div>
+            </div>
           </div>
           <input type="submit" value="Submit" />
         </form>

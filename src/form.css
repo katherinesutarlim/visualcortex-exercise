@@ -82,11 +82,31 @@ select {
   line-height: 17px;
 }
 
-input[type='text'] {
+.amount-input {
   height: 40px;
+  padding: 11px 17px 12px 13.73px;
   border: 1px solid #a4a4a4;
   box-sizing: border-box;
   border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.amount-input input[type='text'] {
+  width: 100%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: 0;
+  margin-left: 8.82px;
 }
 
 input[type='submit'] {
