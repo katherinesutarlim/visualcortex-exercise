@@ -32,12 +32,14 @@ export default class Form extends PureComponent {
         id="form"
         className={result ? 'left' : 'right'}
       >
-        <h2>Calculate your tax</h2>
-        <div className="warning-box">
-          {/* <img src={infoOutlinedIcon} /> */}
-          {/* <Icon>star</Icon> */}
-          <p>Fields marked with * are mandatory</p>
-        </div>
+        <h2>{result ? 'Your tax results' : 'Calculate your tax'}</h2>
+        {!result && (
+          <div className="warning-box">
+            {/* <img src={infoOutlinedIcon} /> */}
+            {/* <Icon>star</Icon> */}
+            <p>Fields marked with * are mandatory</p>
+          </div>
+        )}
         <form
           onSubmit={event => {
             event.preventDefault();

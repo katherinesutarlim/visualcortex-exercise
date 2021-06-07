@@ -9,7 +9,6 @@ export default class Results extends PureComponent {
   };
 
   componentDidMount() {
-    console.log('mount');
     this.setState({ visible: true });
   }
 
