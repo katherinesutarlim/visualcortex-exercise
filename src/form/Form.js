@@ -35,7 +35,7 @@ export default class Form extends PureComponent {
           <div className="warning-box">
             <img
               src="https://raw.githubusercontent.com/katherinesutarlim/visualcortex-exercise/master/public/icons/mdi_information-outline.png"
-              class="icon"
+              className="icon"
             />
             <p>Fields marked with * are mandatory</p>
           </div>

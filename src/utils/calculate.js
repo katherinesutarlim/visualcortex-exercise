@@ -4,31 +4,26 @@ const taxBracket = {
       {
         start: 0,
         end: 18200,
-        base: 0,
-        perDollar: 0
+        rate: 0
       },
       {
         start: 18201,
         end: 45000,
-        base: 0,
-        perDollar: 0.19
+        rate: 0.19
       },
       {
         start: 45001,
         end: 120000,
-        base: 5092,
-        perDollar: 0.325
+        rate: 0.325
       },
       {
         start: 120001,
         end: 180000,
-        base: 29467,
-        perDollar: 0.37
+        rate: 0.37
       },
       {
         start: 180001,
-        base: 51667,
-        perDollar: 0.45
+        rate: 0.45
       }
     ]
   }
@@ -43,13 +38,12 @@ const calculate = (country, incomeYear, amount) => {
       if (bracket.end && amount > bracket.end) {
         return {
           ...bracket,
-          amount:
-            bracket.base + (bracket.end - bracket.start) * bracket.perDollar
+          amount: (bracket.end - bracket.start + 1) * bracket.rate
         };
       }
       return {
         ...bracket,
-        amount: bracket.base + (amount - bracket.start) * bracket.perDollar
+        amount: (amount - bracket.start + 1) * bracket.rate
       };
     });
   }
