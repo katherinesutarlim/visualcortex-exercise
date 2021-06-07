@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 // import infoOutlinedIcon from './mdi_information-outline.png';
 // import Icon from '@material-ui/core/Icon';
-import formatter from './utils/formatter';
+import formatter from '../utils/formatter';
 import '../common/fonts.css';
 import './form.css';
 

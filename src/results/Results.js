@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import formatter from './utils/formatter';
+import formatter from '../utils/formatter';
 import '../common/fonts.css';
 import './results.css';
 
