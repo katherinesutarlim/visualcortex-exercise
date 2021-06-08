@@ -129,6 +129,7 @@ select {
 select[disabled] {
   background-color: #e4e4e4;
   border: 0;
+  color: #848484;
 }
 
 .amount-input {
@@ -170,6 +171,7 @@ select[disabled] {
 
 .amount-input input[type='text'][disabled] {
   background-color: #e4e4e4;
+  color: #848484;
 }
 
 input[type='submit'] {

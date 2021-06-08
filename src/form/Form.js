@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import formatter from '../utils/formatter';
+import { formatterWithoutFractions } from '../utils/formatters';
 import '../common/fonts.css';
 import './form.css';
 
@@ -98,7 +98,7 @@ export default class Form extends PureComponent {
               <div className="prefix">$</div>
               <input
                 type="text"
-                value={amount ? formatter.format(amount) : ''}
+                value={amount ? formatterWithoutFractions.format(amount) : ''}
                 onChange={this.onAmountChange}
                 placeholder="Amount"
                 disabled={result}
